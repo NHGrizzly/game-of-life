@@ -2,6 +2,7 @@
 #define TERMINAL_H
 
 #include <stdbool.h>
+#include <stdio.h>
 
 #define CELL_CHARACTER "#"
 

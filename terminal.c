@@ -1,7 +1,5 @@
 #include "terminal.h"
 
-#include <stdio.h>
-
 bool terminal_print_at(const unsigned int row, const unsigned int col)
 {
     terminal_goto(row, col);
