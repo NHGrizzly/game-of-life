@@ -1,13 +1,6 @@
-#ifndef TERMINAL_H
-#define TERMINAL_H
+#include "terminal.h"
 
-#include <stdbool.h>
 #include <stdio.h>
-
-static bool terminal_goto(unsigned int row, unsigned int col);
-static bool terminal_clear();
-
-static bool terminal_print_at(const unsigned int row, const unsigned int col);
 
 int main(int argc, char const *argv[])
 {
@@ -35,5 +28,3 @@ bool terminal_clear()
 {
     printf("\x1b[2J");
 }
-
-#endif // TERMINAL_H
