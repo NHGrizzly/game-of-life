@@ -1,12 +1,31 @@
 #include "conway.h"
 #include "terminal.h"
 
+bool cells[CONWAY_HEIGHT][CONWAY_WIDTH];
+
 int main(int argc, char const *argv[])
 {
-    terminal_clear();
-    terminal_print_at(0,0);
-    terminal_print_at(1,15);
-    terminal_print_at(2,3);
+    conway_print_grid(cells, CONWAY_HEIGHT, CONWAY_WIDTH);
     return 0;
 }
 
+bool conway_print_grid(bool grid[CONWAY_HEIGHT][CONWAY_WIDTH],
+        const unsigned int grid_height, const unsigned int grid_width)
+{
+    terminal_clear();
+    for (unsigned i = 0; i < grid_height; i++)
+    {
+        for (unsigned int j = 0; j < grid_width; j++)
+        {
+            if (grid[i][j])
+            {
+                printf(CELL_CHARACTER);
+            }
+            else
+            {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+}
