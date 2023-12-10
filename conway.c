@@ -5,6 +5,8 @@ bool cells[CONWAY_HEIGHT][CONWAY_WIDTH];
 
 int main(int argc, char const *argv[])
 {
+    CONWAY_GLIDER(cells)
+
     conway_print_grid(cells, CONWAY_HEIGHT, CONWAY_WIDTH);
     return 0;
 }
