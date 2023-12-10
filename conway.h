@@ -3,8 +3,8 @@
 
 #include <stdbool.h>
 
-#define CONWAY_HEIGHT 32
-#define CONWAY_WIDTH 256 
+#define CONWAY_HEIGHT 8
+#define CONWAY_WIDTH 64 
 
 bool cells[CONWAY_HEIGHT][CONWAY_WIDTH];
 
