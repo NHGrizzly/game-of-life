@@ -3,6 +3,8 @@
 
 #include <stdbool.h>
 
+#define CELL_CHARACTER "#"
+
 bool terminal_goto(unsigned int row, unsigned int col);
 bool terminal_clear();
 

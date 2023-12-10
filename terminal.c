@@ -5,7 +5,7 @@
 bool terminal_print_at(const unsigned int row, const unsigned int col)
 {
     terminal_goto(row, col);
-    printf("#");
+    printf(CELL_CHARACTER);
 }
 
 bool terminal_goto(unsigned int row, unsigned int col)
