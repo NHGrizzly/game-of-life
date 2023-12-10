@@ -2,7 +2,11 @@
 cmake_minimum_required(VERSION 3.6)
 
 project(GameOfLife)
+set_property(GLOBAL PROPERTY C_STANDARD 99)
 
-add_executable(terminal_test terminal.c)
+add_library(terminal terminal.c)
 
-set_property(TARGET terminal_test PROPERTY C_STANDARD 99)
+add_executable(conway conway.c)
+
+target_link_libraries(conway terminal)
+

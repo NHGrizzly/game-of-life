@@ -3,9 +3,9 @@
 
 #include <stdbool.h>
 
-static bool terminal_goto(unsigned int row, unsigned int col);
-static bool terminal_clear();
+bool terminal_goto(unsigned int row, unsigned int col);
+bool terminal_clear();
 
-static bool terminal_print_at(const unsigned int row, const unsigned int col);
+bool terminal_print_at(const unsigned int row, const unsigned int col);
 
 #endif // TERMINAL_H
