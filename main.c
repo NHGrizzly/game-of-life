@@ -1,7 +1,11 @@
 #include "conway.h"
 #include "terminal.h"
 
+#ifdef USE_ARGS
 int main(int argc, char const *argv[])
+#else
+int main()
+#endif
 {
     conway c = {.grid = {{0}}, .height = 10, .width = 10};
 
