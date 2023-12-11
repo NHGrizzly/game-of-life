@@ -23,4 +23,8 @@ typedef struct conway
 
 void conway_print_grid(const conway * c);
 
+unsigned int conway_count_neighbors(conway *restrict c, const unsigned int row, const unsigned int column);
+
+void set_cell(conway *restrict c, const unsigned int row, const unsigned int column, const bool alive);
+
 #endif // CONWAY_H
