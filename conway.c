@@ -64,7 +64,11 @@ void conway_print_grid(const conway * c)
                 printf(" ");
             }
         }
-        printf("\n");
+        printf("|\n");
+    }
+    for (unsigned int j = 0; j < c->width; j++)
+    {
+        printf("_");
     }
 }
 

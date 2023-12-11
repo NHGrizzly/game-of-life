@@ -9,11 +9,11 @@ int main()
 {
     terminal_clear();
 
-    conway c = {.grid = {{0}}, .height = 48, .width = 100};
+    conway c = {.grid = {{0}}, .height = 50, .width = 150};
 
-    conway_place_Rpentomino(&c, 20, 40);
+    conway_place_gosper(&c, 0, 0);
 
-    while(c.time_iteration < 3000)
+    while(c.time_iteration < 300)
     {
         conway_print_grid(&c);
         conway_timestep(&c);
