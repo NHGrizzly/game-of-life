@@ -1,6 +1,7 @@
 #ifndef CONWAY_H
 #define CONWAY_H
 
+#include <stddef.h>
 #include <stdbool.h>
 
 #define CONWAY_HEIGHT 8
@@ -12,8 +13,14 @@
     grid[row+3][col+1] = true;\
     grid[row+3][col+2] = true;\
     grid[row+3][col+3] = true;
+typedef struct conway
+{
+    bool grid[256][256];
+    const unsigned int height;
+    const unsigned int width;
+    size_t time_iteration;
+} conway;
 
-bool conway_print_grid(bool grid[CONWAY_HEIGHT][CONWAY_WIDTH],
-        const unsigned int grid_height, const unsigned int grid_width);
+void conway_print_grid(const conway * c);
 
 #endif // CONWAY_H
