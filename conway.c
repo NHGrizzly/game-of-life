@@ -78,6 +78,47 @@ bool conway_place_glider(conway *restrict c, const unsigned int row, const unsig
     return true;
 }
 
+bool conway_place_gosper(conway *restrict c, const unsigned int row, const unsigned int column)
+{
+    conway_set_cell(c, row+4, column, true);
+    conway_set_cell(c, row+5, column, true);
+    conway_set_cell(c, row+4, column+1, true);
+    conway_set_cell(c, row+5, column+1, true);
+    conway_set_cell(c, row+4, column+10, true);
+    conway_set_cell(c, row+5, column+10, true);
+    conway_set_cell(c, row+6, column+10, true);
+    conway_set_cell(c, row+3, column+11, true);
+    conway_set_cell(c, row+7, column+11, true);
+    conway_set_cell(c, row+2, column+12, true);
+    conway_set_cell(c, row+8, column+12, true);
+    conway_set_cell(c, row+2, column+13, true);
+    conway_set_cell(c, row+8, column+13, true);
+    conway_set_cell(c, row+5, column+14, true);
+    conway_set_cell(c, row+3, column+15, true);
+    conway_set_cell(c, row+7, column+15, true);
+    conway_set_cell(c, row+4, column+16, true);
+    conway_set_cell(c, row+5, column+16, true);
+    conway_set_cell(c, row+6, column+16, true);
+    conway_set_cell(c, row+5, column+17, true);
+    conway_set_cell(c, row+2, column+20, true);
+    conway_set_cell(c, row+3, column+20, true);
+    conway_set_cell(c, row+4, column+20, true);
+    conway_set_cell(c, row+2, column+21, true);
+    conway_set_cell(c, row+3, column+21, true);
+    conway_set_cell(c, row+4, column+21, true);
+    conway_set_cell(c, row+1, column+22, true);
+    conway_set_cell(c, row+5, column+22, true);
+    conway_set_cell(c, row+0, column+24, true);
+    conway_set_cell(c, row+1, column+24, true);
+    conway_set_cell(c, row+5, column+24, true);
+    conway_set_cell(c, row+6, column+24, true);
+    conway_set_cell(c, row+2, column+34, true);
+    conway_set_cell(c, row+3, column+34, true);
+    conway_set_cell(c, row+2, column+35, true);
+    conway_set_cell(c, row+3, column+35, true);
+    return true;
+}
+
 unsigned int conway_count_neighbors(conway *restrict c, const unsigned int row, const unsigned int column)
 {
     unsigned int neighbors = 0;

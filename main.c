@@ -11,9 +11,8 @@ int main()
 
     conway c = {.grid = {{0}}, .height = 32, .width = 60};
 
+    conway_place_gosper(&c, 0, 0);
 
-    conway_place_glider(&c, 2, 2);
-    
     for (c.time_iteration = 0; c.time_iteration < 1000; c.time_iteration++)
     {
         conway_print_grid(&c);
