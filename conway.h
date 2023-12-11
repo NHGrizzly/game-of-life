@@ -18,7 +18,11 @@ void conway_set_cell(conway *restrict c, const unsigned int row, const unsigned 
 void conway_timestep(conway *restrict c);
 void conway_print_grid(const conway * c);
 
+// spaceships
 bool conway_place_glider(conway *restrict c, const unsigned int row, const unsigned int column);
 bool conway_place_gosper(conway *restrict c, const unsigned int row, const unsigned int column);
+bool conway_place_LWSS(conway *restrict c, const unsigned int row, const unsigned int column);
+// bool conway_place_MWSS(conway *restrict c, const unsigned int row, const unsigned int column);
+// bool conway_place_HWSS(conway *restrict c, const unsigned int row, const unsigned int column);
 
 #endif // CONWAY_H

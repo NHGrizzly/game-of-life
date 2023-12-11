@@ -119,6 +119,20 @@ bool conway_place_gosper(conway *restrict c, const unsigned int row, const unsig
     return true;
 }
 
+bool conway_place_LWSS(conway *restrict c, const unsigned int row, const unsigned int column)
+{
+    conway_set_cell(c, row, column, true);
+    conway_set_cell(c, row+2, column, true);
+    conway_set_cell(c, row+3, column+1, true);
+    conway_set_cell(c, row+3, column+2, true);
+    conway_set_cell(c, row, column+3, true);
+    conway_set_cell(c, row+3, column+3, true);
+    conway_set_cell(c, row+1, column+4, true);
+    conway_set_cell(c, row+2, column+4, true);
+    conway_set_cell(c, row+3, column+4, true);
+    return true;
+}
+
 unsigned int conway_count_neighbors(conway *restrict c, const unsigned int row, const unsigned int column)
 {
     unsigned int neighbors = 0;
