@@ -17,7 +17,7 @@ int main()
     {
         conway_print_grid(&c);
         conway_timestep(&c);
-        wait(50);
+        // wait(5);
     }
 
     return 0;
