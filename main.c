@@ -13,11 +13,12 @@ int main()
 
     conway_place_Rpentomino(&c, 20, 40);
 
-    for (c.time_iteration = 0; c.time_iteration < 3000; c.time_iteration++)
+    while(c.time_iteration < 3000)
     {
         conway_print_grid(&c);
         conway_timestep(&c);
         // wait(5);
+        c.time_iteration++;
     }
 
     return 0;
