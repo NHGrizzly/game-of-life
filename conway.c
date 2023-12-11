@@ -133,6 +133,16 @@ bool conway_place_LWSS(conway *restrict c, const unsigned int row, const unsigne
     return true;
 }
 
+bool conway_place_Rpentomino(conway *restrict c, const unsigned int row, const unsigned int column)
+{
+    conway_set_cell(c, row+1, column, true);
+    conway_set_cell(c, row, column+1, true);
+    conway_set_cell(c, row+1, column+1, true);
+    conway_set_cell(c, row+2, column+1, true);
+    conway_set_cell(c, row, column+2, true);
+    return true;
+}
+
 unsigned int conway_count_neighbors(conway *restrict c, const unsigned int row, const unsigned int column)
 {
     unsigned int neighbors = 0;

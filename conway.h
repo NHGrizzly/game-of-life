@@ -25,4 +25,7 @@ bool conway_place_LWSS(conway *restrict c, const unsigned int row, const unsigne
 // bool conway_place_MWSS(conway *restrict c, const unsigned int row, const unsigned int column);
 // bool conway_place_HWSS(conway *restrict c, const unsigned int row, const unsigned int column);
 
+// methuselahs
+bool conway_place_Rpentomino(conway *restrict c, const unsigned int row, const unsigned int column);
+
 #endif // CONWAY_H
