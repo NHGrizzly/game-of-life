@@ -47,6 +47,16 @@ unsigned int conway_count_neighbors(conway *restrict c, const unsigned int row, 
     return neighbors;
 }
 
+bool conway_place_glider(conway *restrict c, const unsigned int row, const unsigned int column)
+{
+    set_cell(c, row, column+1, true);
+    set_cell(c, row+1, column+2, true);
+    set_cell(c, row+2, column, true);
+    set_cell(c, row+2, column+1, true);
+    set_cell(c, row+2, column+2, true);
+    return true;
+}
+
 void set_cell(conway *restrict c, const unsigned int row, const unsigned int column, const bool alive)
 {
     c->grid[row][column] = alive;

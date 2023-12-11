@@ -12,6 +12,8 @@ int main(int argc, char const *argv[])
 
     printf("%d", conway_count_neighbors(&c, 0, 0));
 
+    conway_place_glider(&c, 2, 2);
+    
     conway_print_grid(&c);
 
     return 0;
