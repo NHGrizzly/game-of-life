@@ -14,6 +14,8 @@ int main(int argc, char const *argv[])
 
     conway_place_glider(&c, 2, 2);
     
+    wait(1000);
+
     conway_print_grid(&c);
 
     return 0;

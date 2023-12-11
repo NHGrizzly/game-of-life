@@ -4,6 +4,8 @@
 #include <stddef.h>
 #include <stdbool.h>
 
+#include "timing.h"
+
 typedef struct conway
 {
     bool grid[256][256];
