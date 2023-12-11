@@ -50,7 +50,7 @@ void conway_timestep(conway *restrict c)
 
 void conway_print_grid(const conway * c)
 {
-    terminal_clear();
+    terminal_goto(0,0);
     for (unsigned i = 0; i < c->height; i++)
     {
         for (unsigned int j = 0; j < c->width; j++)
