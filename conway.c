@@ -2,6 +2,10 @@
 #include "terminal.h"
 
 // neighbor functions
+/**
+ * Counts the neighbors of `c->grid[row,column]`
+ */
+unsigned int conway_count_neighbors(conway *restrict c, const unsigned int row, const unsigned int column);
 bool neighbor_UL(conway *restrict c, const unsigned int row, const unsigned int column); // upper left
 bool neighbor_U(conway *restrict c, const unsigned int row, const unsigned int column); // uppper
 bool neighbor_UR(conway *restrict c, const unsigned int row, const unsigned int column); // upper right
@@ -10,6 +14,11 @@ bool neighbor_R(conway *restrict c, const unsigned int row, const unsigned int c
 bool neighbor_BL(conway *restrict c, const unsigned int row, const unsigned int column); // bottom left
 bool neighbor_B(conway *restrict c, const unsigned int row, const unsigned int column); // bottom
 bool neighbor_BR(conway *restrict c, const unsigned int row, const unsigned int column); // bottom right
+
+void conway_set_cell(conway *restrict c, const unsigned int row, const unsigned int column, const bool alive)
+{
+    c->grid[row][column] = alive;
+}
 
 void conway_print_grid(const conway * c)
 {
@@ -31,6 +40,16 @@ void conway_print_grid(const conway * c)
     }
 }
 
+bool conway_place_glider(conway *restrict c, const unsigned int row, const unsigned int column)
+{
+    conway_set_cell(c, row, column+1, true);
+    conway_set_cell(c, row+1, column+2, true);
+    conway_set_cell(c, row+2, column, true);
+    conway_set_cell(c, row+2, column+1, true);
+    conway_set_cell(c, row+2, column+2, true);
+    return true;
+}
+
 unsigned int conway_count_neighbors(conway *restrict c, const unsigned int row, const unsigned int column)
 {
     unsigned int neighbors = 0;
@@ -45,21 +64,6 @@ unsigned int conway_count_neighbors(conway *restrict c, const unsigned int row, 
     if(neighbor_BR(c, row, column)) neighbors++;
 
     return neighbors;
-}
-
-bool conway_place_glider(conway *restrict c, const unsigned int row, const unsigned int column)
-{
-    set_cell(c, row, column+1, true);
-    set_cell(c, row+1, column+2, true);
-    set_cell(c, row+2, column, true);
-    set_cell(c, row+2, column+1, true);
-    set_cell(c, row+2, column+2, true);
-    return true;
-}
-
-void set_cell(conway *restrict c, const unsigned int row, const unsigned int column, const bool alive)
-{
-    c->grid[row][column] = alive;
 }
 
 bool neighbor_UL(conway *restrict c, const unsigned int row, const unsigned int column)

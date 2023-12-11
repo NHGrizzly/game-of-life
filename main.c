@@ -14,7 +14,6 @@ int main()
     set_cell(&c, 9, 0, true);
     set_cell(&c, 9, 9, true);
 
-    printf("%d", conway_count_neighbors(&c, 0, 0));
 
     conway_place_glider(&c, 2, 2);
     

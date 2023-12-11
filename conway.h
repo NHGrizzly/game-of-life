@@ -14,12 +14,9 @@ typedef struct conway
     size_t time_iteration;
 } conway;
 
+void conway_set_cell(conway *restrict c, const unsigned int row, const unsigned int column, const bool alive);
 void conway_print_grid(const conway * c);
 
-unsigned int conway_count_neighbors(conway *restrict c, const unsigned int row, const unsigned int column);
-
 bool conway_place_glider(conway *restrict c, const unsigned int row, const unsigned int column);
-
-void set_cell(conway *restrict c, const unsigned int row, const unsigned int column, const bool alive);
 
 #endif // CONWAY_H
