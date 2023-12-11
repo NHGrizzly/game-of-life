@@ -15,6 +15,7 @@ typedef struct conway
 } conway;
 
 void conway_set_cell(conway *restrict c, const unsigned int row, const unsigned int column, const bool alive);
+void conway_timestep(conway *restrict c);
 void conway_print_grid(const conway * c);
 
 bool conway_place_glider(conway *restrict c, const unsigned int row, const unsigned int column);

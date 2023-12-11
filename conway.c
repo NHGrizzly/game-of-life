@@ -1,3 +1,5 @@
+#include <string.h>
+
 #include "conway.h"
 #include "terminal.h"
 
@@ -18,6 +20,32 @@ bool neighbor_BR(conway *restrict c, const unsigned int row, const unsigned int 
 void conway_set_cell(conway *restrict c, const unsigned int row, const unsigned int column, const bool alive)
 {
     c->grid[row][column] = alive;
+}
+
+void conway_timestep(conway *restrict c)
+{
+    conway copy;
+    memcpy(&copy, c, sizeof(*c));
+
+    for (size_t i = 0; i < c->height; i++)
+    {
+        for (size_t j = 0; j < c->width; j++)
+        {
+            switch (conway_count_neighbors(&copy, i, j))
+            {
+            case 2:
+                c->grid[i][j] = copy.grid[i][j];
+                break;
+            case 3:
+                c->grid[i][j] = true;
+                break;
+            
+            default:
+                c->grid[i][j] = false;
+                break;
+            }
+        }
+    }
 }
 
 void conway_print_grid(const conway * c)
